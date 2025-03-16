@@ -27,6 +27,9 @@ import {
     useSidebar,
 } from "@/components/ui/sidebar"
 import { User } from "@phosphor-icons/react"
+
+
+import { handleSignOut } from "@/app/actions/auth/signOut"
 import { useEffect, useState } from "react"
 
 export function NavUser() {
@@ -73,7 +76,9 @@ export function NavUser() {
                         </DropdownMenuGroup>
 
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem className="text-red-600 focus:text-red-700">
+                        <DropdownMenuItem
+                            className="text-red-600 focus:text-red-700"
+                            onClick={() => { handleSignOut() }}>
                             <LogOut className="h-5 w-5 mr-2" />
                             Log out
                         </DropdownMenuItem>
