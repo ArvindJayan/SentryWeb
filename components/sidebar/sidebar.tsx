@@ -1,7 +1,10 @@
 export default function Sidebar() {
     return (
-        <div>
+        <main className="w-1/4 bg-foreground/10 p-4 h-full">
+            <div>
 
-        </div>
+            </div>
+            Sidebar
+        </main>
     )
 }

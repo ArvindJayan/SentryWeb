@@ -12,9 +12,9 @@ export function NavbarBreadcrumb({ }) {
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
             <Breadcrumb>
-                <BreadcrumbList className='text-foreground'>
+                <BreadcrumbList className='text-foreground mt-1'>
                     <BreadcrumbItem >
-                        <Link href={`/dashboard`} className='flex heading text-2xl font-semibold'><ShieldAlert className='h-7 w-7 ml-2 mr-1 mt-0.5 stroke-2' />SentryWeb</Link>
+                        <Link href={`/dashboard`} className='flex heading text-3xl font-semibold'><ShieldAlert className='h-8 w-8 ml-2 mr-1 stroke-2 mt-0.5' />SentryWeb</Link>
                     </BreadcrumbItem>
 
 
