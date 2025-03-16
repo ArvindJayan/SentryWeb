@@ -2,7 +2,6 @@
 
 import {
     LogOut,
-    Settings,
     User2
 } from "lucide-react"
 
@@ -50,7 +49,7 @@ export function NavUser() {
                             size="lg"
                             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                         >
-                            <Avatar className="h-9 w-9 rounded-full mb-2">
+                            <Avatar className="h-10 w-10 rounded-full mb-2">
                                 <AvatarImage src={profilePicture || ''} />
                                 <AvatarFallback className='bg-foreground'>{<User className="text-background text-lg" />}</AvatarFallback>
                             </Avatar>
@@ -62,22 +61,17 @@ export function NavUser() {
                         align="end"
                         sideOffset={4}
                     >
-                        <DropdownMenuLabel className="p-2">
+                        <DropdownMenuLabel className="p-2 text-base">
                             My Account
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuGroup>
+                        <DropdownMenuGroup className="text-base">
                             <DropdownMenuItem>
                                 <User2 className="h-5 w-5 mr-2" />
-                                Profile
+                                My Profile
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
-                        <DropdownMenuGroup>
-                            <DropdownMenuItem>
-                                <Settings className="h-5 w-5 mr-2" />
-                                Settings
-                            </DropdownMenuItem>
-                        </DropdownMenuGroup>
+
                         <DropdownMenuSeparator />
                         <DropdownMenuItem className="text-red-600 focus:text-red-700">
                             <LogOut className="h-5 w-5 mr-2" />
