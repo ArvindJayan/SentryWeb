@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { getSession } from "../actions/auth/getSession";
 
-export default async function DashboardPage() {
+export default async function Dashboard() {
     try {
         const { user } = await getSession();
         if (!user) {

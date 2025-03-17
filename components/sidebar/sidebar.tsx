@@ -1,4 +1,5 @@
 "use client";
+import { BookOpen, TerminalWindow } from '@phosphor-icons/react';
 import { LayoutDashboard, MonitorDot, Settings } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -20,7 +21,13 @@ export default function Sidebar() {
                     <Link href="/dashboard" className={getLinkClass('/dashboard')}><LayoutDashboard className='h-5 w-5 mr-2 mt-1' />  Dashboard</Link>
                 </li>
                 <li>
+                    <Link href="/guide" className={getLinkClass('/guide')}><BookOpen className='h-5 w-5 mr-2 mt-1' /> Guide</Link>
+                </li>
+                <li>
                     <Link href="/connections" className={getLinkClass('/connections')}><MonitorDot className='h-5 w-5 mr-2 mt-1' /> Connections</Link>
+                </li>
+                <li>
+                    <Link href="/terminal" className={getLinkClass('/terminal')}><TerminalWindow className='h-5 w-5 mr-2 mt-1' /> Terminal</Link>
                 </li>
                 <li>
                     <Link href="/settings" className={getLinkClass('/settings')}><Settings className='h-5 w-5 mr-2 mt-1' /> Settings</Link>

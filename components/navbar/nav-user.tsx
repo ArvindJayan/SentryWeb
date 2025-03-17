@@ -8,8 +8,7 @@ import {
 import { getSession } from "@/app/actions/auth/getSession"
 import {
     Avatar,
-    AvatarFallback,
-    AvatarImage,
+    AvatarImage
 } from "@/components/ui/avatar"
 import {
     DropdownMenu,
@@ -26,7 +25,6 @@ import {
     SidebarMenuItem,
     useSidebar,
 } from "@/components/ui/sidebar"
-import { User } from "@phosphor-icons/react"
 
 import { signOut } from "@/app/actions/auth/signOut"
 import { useRouter } from 'next/navigation'
@@ -40,7 +38,8 @@ export function NavUser() {
 
     const handleSignOut = async () => {
         await signOut();
-        router.refresh();
+        setIsSignedIn(false);
+        setProfilePicture(null);
     };
 
     useEffect(() => {
@@ -63,11 +62,9 @@ export function NavUser() {
                         <DropdownMenuTrigger asChild>
                             <SidebarMenuButton
                                 size="lg"
-                                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
-                            >
-                                <Avatar className="h-10 w-10 rounded-full mb-2">
+                                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
+                                <Avatar className="h-11 w-11 rounded-full mb-1">
                                     <AvatarImage src={profilePicture || ''} />
-                                    <AvatarFallback className='bg-foreground'>{<User className="text-background text-2xl" />}</AvatarFallback>
                                 </Avatar>
                             </SidebarMenuButton>
                         </DropdownMenuTrigger>
