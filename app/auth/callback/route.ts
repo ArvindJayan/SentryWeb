@@ -8,9 +8,7 @@ export async function GET(request: Request) {
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
 
-  const origin = process.env.NODE_ENV === "production"
-    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
-    : requestUrl.origin;
+  const origin = process.env.NODE_ENV === "production" ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : requestUrl.origin;
 
   const redirectTo = requestUrl.searchParams.get("redirect_to")?.toString();
 
