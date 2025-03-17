@@ -37,9 +37,9 @@ export function NavUser() {
     const router = useRouter();
 
     const handleSignOut = async () => {
-        await signOut();
-        setIsSignedIn(false);
         setProfilePicture(null);
+        setIsSignedIn(false);
+        await signOut();
     };
 
     useEffect(() => {
