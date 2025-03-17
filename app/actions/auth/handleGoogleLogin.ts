@@ -7,9 +7,9 @@ import { redirect } from 'next/navigation';
 export async function handleGoogleLogin() {
     const supabase = await createClient();
 
-    const redirectToUrl = process.env.NODE_ENV === 'production'
-        ? `${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback`
-        : `${process.env.LOCAL_URL}/auth/callback`;
+    const redirectToUrl = process.env.NODE_ENV === 'development'
+        ? `${process.env.LOCAL_URL}/auth/callback`
+        : `${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback`;
 
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
