@@ -10,6 +10,7 @@ export async function GET(request: Request) {
   const origin = process.env.NODE_ENV === 'production'
     ? process.env.NEXT_PUBLIC_VERCEL_URL
     : requestUrl.origin;
+
   const redirectTo = requestUrl.searchParams.get("redirect_to")?.toString();
 
   if (code) {

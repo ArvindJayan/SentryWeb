@@ -1,16 +1,16 @@
-import { redirect } from "next/navigation";
-import { getSession } from "../actions/auth/getSession";
+// import { redirect } from "next/navigation";
+// import { getSession } from "../actions/auth/getSession";
 
 export default async function Dashboard() {
-    try {
-        const { user } = await getSession();
-        if (!user) {
-            return redirect('/login');
-        }
-    } catch (error) {
-        console.error(error);
-        return redirect('/login');
-    }
+    // try {
+    //     const { user } = await getSession();
+    //     if (!user) {
+    //         return redirect('/login');
+    //     }
+    // } catch (error) {
+    //     console.error(error);
+    //     return redirect('/login');
+    // }
 
     return (
         <main className="px-3 py-6">
