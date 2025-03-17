@@ -118,10 +118,10 @@ export default function Terminal() {
     return (
         <div className="flex justify-center items-center h-[75vh] overflow-hidden">
             <div
-                className="w-3/4 h-full  bg-foreground text-background/90 font-mono rounded-md border border-foreground/70 shadow-lg"
+                className="w-3/4 h-full  bg-foreground/90 text-background/90 font-mono rounded-md border border-foreground/60 shadow-lg"
                 onClick={focusInput}
             >
-                <div className="flex items-center bg-background/15 px-4 py-2 border-b border-foreground/70">
+                <div className="flex items-center bg-background/15 px-4 py-2 border-b border-foreground/60">
                     <div className="flex space-x-2">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -131,7 +131,7 @@ export default function Terminal() {
                 </div>
 
                 <div ref={terminalRef} className="p-4 h-[calc(100%-40px)] overflow-y-auto">
-                    <div className="text-background/90 mb-4">Welcome to Terminal v1.0.0 Type 'help' to see available commands.</div>
+                    <div className="text-background/80 mb-4">Welcome to Terminal v1.0.0 Type 'help' to see available commands.</div>
 
                     {history.map((entry, index) => (
                         <div key={index} className="mb-2">

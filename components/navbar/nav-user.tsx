@@ -97,7 +97,7 @@ export function NavUser() {
                 ) : (
                     <button
                         onClick={() => router.push('/login')}
-                        className="text-background bg-foreground hover:bg:bg-foreground/90 font-bold py-2 px-4 rounded-lg"
+                        className="text-background bg-foreground hover:bg:bg-foreground/90 font-bold py-2 px-4 mb-2 rounded-lg"
                     >
                         Sign In
                     </button>

@@ -11,7 +11,7 @@ export default function Sidebar() {
     }
 
     const getLinkClass = (path: string) => {
-        return pathname === path ? 'flex rounded-lg p-2.5 bg-foreground/90 text-background transition duration-300' : 'flex rounded-lg p-2.5 hover:bg-foreground/5 transition duration-300';
+        return pathname === path ? 'flex rounded-lg p-2.5 bg-foreground/90 text-background transition duration-300' : 'flex rounded-lg p-2.5 hover:bg-foreground/10 transition duration-300';
     };
 
     return (
