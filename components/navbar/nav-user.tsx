@@ -28,62 +28,83 @@ import {
 } from "@/components/ui/sidebar"
 import { User } from "@phosphor-icons/react"
 
-
-import { handleSignOut } from "@/app/actions/auth/signOut"
+import { signOut } from "@/app/actions/auth/signOut"
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from "react"
 
 export function NavUser() {
     const { isMobile } = useSidebar();
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
+    const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
+    const router = useRouter();
+
+    const handleSignOut = async () => {
+        await signOut();
+        router.refresh();
+    };
 
     useEffect(() => {
         (async () => {
             const session = await getSession();
-            setProfilePicture(session.user.user_metadata.picture);
+            if (session) {
+                setProfilePicture(session.user.user_metadata.picture);
+                setIsSignedIn(true);
+            } else {
+                setIsSignedIn(false);
+            }
         })();
     }, []);
 
     return (
         <SidebarMenu>
             <SidebarMenuItem>
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <SidebarMenuButton
-                            size="lg"
-                            className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                {isSignedIn ? (
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <SidebarMenuButton
+                                size="lg"
+                                className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
+                            >
+                                <Avatar className="h-10 w-10 rounded-full mb-2">
+                                    <AvatarImage src={profilePicture || ''} />
+                                    <AvatarFallback className='bg-foreground'>{<User className="text-background text-2xl" />}</AvatarFallback>
+                                </Avatar>
+                            </SidebarMenuButton>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent
+                            className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg mt-9 text-base"
+                            side={isMobile ? "bottom" : "right"}
+                            align="end"
+                            sideOffset={4}
                         >
-                            <Avatar className="h-10 w-10 rounded-full mb-2">
-                                <AvatarImage src={profilePicture || ''} />
-                                <AvatarFallback className='bg-foreground'>{<User className="text-background text-lg" />}</AvatarFallback>
-                            </Avatar>
-                        </SidebarMenuButton>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent
-                        className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg mt-9"
-                        side={isMobile ? "bottom" : "right"}
-                        align="end"
-                        sideOffset={4}
-                    >
-                        <DropdownMenuLabel className="p-2 text-base">
-                            My Account
-                        </DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuGroup className="text-base">
-                            <DropdownMenuItem>
-                                <User2 className="h-5 w-5 mr-2" />
-                                My Profile
-                            </DropdownMenuItem>
-                        </DropdownMenuGroup>
+                            <DropdownMenuLabel className="p-2">
+                                My Account
+                            </DropdownMenuLabel>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuGroup>
+                                <DropdownMenuItem>
+                                    <User2 className="h-5 w-5 mr-2" />
+                                    My Profile
+                                </DropdownMenuItem>
+                            </DropdownMenuGroup>
 
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem
-                            className="text-red-600 focus:text-red-700"
-                            onClick={() => { handleSignOut() }}>
-                            <LogOut className="h-5 w-5 mr-2" />
-                            Log out
-                        </DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                            <DropdownMenuSeparator />
+                            <DropdownMenuItem
+                                className="text-red-600 focus:text-red-700"
+                                onClick={handleSignOut}>
+                                <LogOut className="h-5 w-5 mr-2" />
+                                Log out
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                ) : (
+                    <button
+                        onClick={() => router.push('/login')}
+                        className="text-background bg-foreground hover:bg:bg-foreground/90 font-bold py-2 px-4 rounded-lg"
+                    >
+                        Sign In
+                    </button>
+                )}
             </SidebarMenuItem>
         </SidebarMenu>
     )

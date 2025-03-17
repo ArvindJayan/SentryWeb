@@ -10,8 +10,9 @@ export async function handleGoogleLogin() {
 
     const { data, error } = await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: `${process.env.NODE_ENV === 'production' ? 'https' : 'http'}://${process.env.VERCEL_URL}/auth/callback` } });
 
+
     if (error) {
-        redirect('/dashboard');
+        redirect('/');
     }
 
     if (data.url) {
