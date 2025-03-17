@@ -7,10 +7,11 @@ export async function GET(request: Request) {
   // https://supabase.com/docs/guides/auth/server-side/nextjs
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
-  const isProduction = process.env.NODE_ENV === "production";
-  const origin = isProduction && process.env.NEXT_PUBLIC_VERCEL_URL
+
+  const origin = process.env.NODE_ENV === "production"
     ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
     : requestUrl.origin;
+
   const redirectTo = requestUrl.searchParams.get("redirect_to")?.toString();
 
   if (code) {
