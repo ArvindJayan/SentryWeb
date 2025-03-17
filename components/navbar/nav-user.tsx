@@ -69,12 +69,12 @@ export function NavUser() {
                             </SidebarMenuButton>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent
-                            className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg mt-9 text-base"
+                            className="w-[--radix-dropdown-menu-trigger-width] min-w-48 rounded-lg mt-9"
                             side={isMobile ? "bottom" : "right"}
                             align="end"
                             sideOffset={4}
                         >
-                            <DropdownMenuLabel className="p-2">
+                            <DropdownMenuLabel className="p-2 text-base">
                                 My Account
                             </DropdownMenuLabel>
                             <DropdownMenuSeparator />
