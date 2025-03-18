@@ -3,9 +3,9 @@ import { TextAnimate } from "../ui/text-animate";
 
 export function GlobeDemo() {
     return (
-        <div className="relative h-screen justify-center overflow-hidden bg-background px-40 pb-8">
+        <div className="relative h-screen overflow-hidden bg-background pb-8">
             <TextAnimate
-                className='text-6xl font-extrabold mt-8 w-full'
+                className='flex justify-center text-6xl font-extrabold mt-8 w-full'
                 animation="blurInUp"
                 by="character">
                 Make remote access easier than ever
