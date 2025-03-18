@@ -11,8 +11,7 @@ export default function Home() {
         <h1 className="text-center text-6xl font-extrabold mt-16 text-teal-600">What is SentryWeb?</h1>
         <div className="flex justify-center text-lg my-2 text-center text-foreground/60 font-medium">
           SentryWeb is more than just your average network access tool. It's a
-          platform that <br />  allows you to access your remote network from anywhere in
-          the world.
+          platform that enables you <br />  with powerful tools to stay ahead of threats and keep your network safe.
         </div>
       </div>
 

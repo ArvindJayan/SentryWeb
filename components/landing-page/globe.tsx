@@ -3,7 +3,7 @@ import { TextAnimate } from "../ui/text-animate";
 
 export function GlobeDemo() {
     return (
-        <div className="relative h-screen overflow-hidden bg-background pb-8">
+        <div className="relative h-screen overflow-hidden bg-background pb-8 px-4">
             <TextAnimate
                 className='flex justify-center text-6xl font-extrabold mt-8 w-full text-teal-600'
                 animation="blurInUp"
@@ -13,7 +13,7 @@ export function GlobeDemo() {
 
 
             <div className="flex relative justify-center text-lg mt-2 text-center text-foreground/60 font-medium">
-                A remote network access and security platform. Connect, analyze, and secure <br /> with powerful tools—empowering users to stay ahead of threats.
+                A remote network access and penetration testing platform. Secure, analyze <br /> and connect to your devices from all over the world
             </div>
 
             <Globe className="top-24 mt-4" />
