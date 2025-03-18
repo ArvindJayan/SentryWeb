@@ -118,7 +118,7 @@ export default function Terminal() {
     return (
         <div className="flex justify-center items-center h-[75vh] overflow-hidden">
             <div
-                className="w-3/4 h-full  bg-foreground/90 text-background/90 font-mono rounded-md border border-foreground/60 shadow-lg"
+                className="w-3/4 h-full  bg-foreground/90 dark:bg-foreground/10 text-background/90 dark:text-foreground/80 font-mono rounded-md border shadow-lg"
                 onClick={focusInput}
             >
                 <div className="flex items-center bg-background/15 px-4 py-2 border-b border-foreground/60">
@@ -127,11 +127,11 @@ export default function Terminal() {
                         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
-                    <div className="mx-auto text-sm text-background/70">Terminal</div>
+                    <div className="mx-auto text-sm text-background/70 dark:text-foreground/70">Terminal</div>
                 </div>
 
                 <div ref={terminalRef} className="p-4 h-[calc(100%-40px)] overflow-y-auto">
-                    <div className="text-background/80 mb-4">Welcome to Terminal v1.0.0 Type 'help' to see available commands.</div>
+                    <div className="text-background/80 dark:text-foreground/80 mb-4">Welcome to Terminal v1.0.0 Type 'help' to see available commands.</div>
 
                     {history.map((entry, index) => (
                         <div key={index} className="mb-2">
@@ -141,7 +141,7 @@ export default function Terminal() {
                                     <span>{entry.text}</span>
                                 </div>
                             ) : (
-                                <div className="ml-6 whitespace-pre-wrap text-background/90">{entry.text}</div>
+                                <div className="ml-6 whitespace-pre-wrap text-background/90 dark:text-foreground/90">{entry.text}</div>
                             )}
                         </div>
                     ))}
@@ -154,7 +154,7 @@ export default function Terminal() {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             onKeyDown={handleKeyDown}
-                            className="flex-1 bg-transparent outline-none border-none text-background/90 caret-background/20"
+                            className="flex-1 bg-transparent outline-none border-none text-background/80 dark:text-foreground/90 caret-background/20 dark:caret-foreground/20"
                             aria-label="Terminal input"
                         />
                     </div>
