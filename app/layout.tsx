@@ -42,7 +42,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <SidebarProvider>
-              <div className="flex flex-col h-screen w-screen">
+              <div className="flex flex-col h-screen w-screen max-w-[98.5vw]">
                 <Navbar />
                 <div className="flex flex-1">
                   <Sidebar />

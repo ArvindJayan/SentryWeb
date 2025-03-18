@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from 'next/navigation';
+import GetStartedButton from './get-started-button';
 import { NavUser } from './nav-user';
 import { NavbarBreadcrumb } from './navbar-breadcrumb';
 
@@ -15,7 +16,8 @@ export default function Navbar() {
             <NavbarBreadcrumb />
 
             <div className='flex-grow' />
-            <div className='flex m-1'>
+            <div className='flex items-center justify-center max-w-[40vw]'>
+                <GetStartedButton />
                 <NavUser />
             </div>
         </div>

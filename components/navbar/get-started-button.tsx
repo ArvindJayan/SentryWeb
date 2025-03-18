@@ -23,7 +23,7 @@ export default function GetStartedButton() {
     return (
         <div>
             <button
-                className="mt-4 px-4 py-2 bg-foreground text-background font-semibold rounded-lg"
+                className="items-center px-3 mt-1 py-2 w-max bg-foreground text-background font-semibold rounded-lg"
                 onClick={handleGetStarted}>
                 Get Started
             </button>

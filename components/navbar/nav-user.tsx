@@ -57,13 +57,13 @@ export function NavUser() {
     return (
         <SidebarMenu>
             <SidebarMenuItem>
-                {isSignedIn ? (
+                {isSignedIn && (
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <SidebarMenuButton
                                 size="lg"
                                 className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground">
-                                <Avatar className="h-11 w-11 rounded-full mb-1">
+                                <Avatar className="h-10 w-10 rounded-full mb-2">
                                     <AvatarImage src={profilePicture || ''} />
                                 </Avatar>
                             </SidebarMenuButton>
@@ -94,13 +94,6 @@ export function NavUser() {
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
-                ) : (
-                    <button
-                        onClick={() => router.push('/login')}
-                        className="text-background bg-foreground hover:bg:bg-foreground/90 font-bold py-2 px-4 mb-2 rounded-lg"
-                    >
-                        Sign In
-                    </button>
                 )}
             </SidebarMenuItem>
         </SidebarMenu>
