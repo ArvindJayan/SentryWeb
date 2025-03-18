@@ -14,7 +14,7 @@ export function NavbarBreadcrumb({ }) {
             <Breadcrumb>
                 <BreadcrumbList className='text-foreground mt-1'>
                     <BreadcrumbItem >
-                        <Link href={`/`} className='flex heading text-3xl font-semibold'><ShieldAlert className='h-8 w-8 ml-2 mr-1 stroke-2 mt-0.5' />SentryWeb</Link>
+                        <Link href={`/`} className='flex text-3xl font-semibold text-teal-700'><ShieldAlert className='h-8 w-8 ml-2 mr-1 stroke-2 mt-0.5' />SentryWeb</Link>
                     </BreadcrumbItem>
 
 

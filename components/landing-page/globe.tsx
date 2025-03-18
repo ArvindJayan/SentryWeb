@@ -5,7 +5,7 @@ export function GlobeDemo() {
     return (
         <div className="relative h-screen overflow-hidden bg-background pb-8">
             <TextAnimate
-                className='flex justify-center text-6xl font-extrabold mt-8 w-full'
+                className='flex justify-center text-6xl font-extrabold mt-8 w-full text-teal-600'
                 animation="blurInUp"
                 by="character">
                 Make remote access easier than ever

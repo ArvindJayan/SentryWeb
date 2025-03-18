@@ -5,7 +5,7 @@ import React, { forwardRef, useRef } from "react";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
 import { cn } from "@/lib/utils";
 import { DesktopTower, Laptop } from "@phosphor-icons/react";
-import { Monitor } from "@phosphor-icons/react/dist/ssr";
+import { Monitor, User } from "@phosphor-icons/react/dist/ssr";
 
 const Circle = forwardRef<
     HTMLDivElement,
@@ -15,7 +15,7 @@ const Circle = forwardRef<
         <div
             ref={ref}
             className={cn(
-                "z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+                "z-10 flex size-12 items-center justify-center rounded-full border-2 bg-background p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
                 className,
             )}
         >
@@ -51,7 +51,7 @@ export function AnimatedBeamMultipleOutputDemo({
             <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
                 <div className="flex flex-col justify-center text-foreground">
                     <Circle ref={div7Ref}>
-                        <Icons.user />
+                        <User />
                     </Circle>
                 </div>
                 <div className="flex flex-col justify-center">

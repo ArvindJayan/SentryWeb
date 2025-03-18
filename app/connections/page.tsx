@@ -15,7 +15,7 @@ export default async function ConnectionsPage() {
                         <div className="text-center font-semibold text-foreground/80 text-lg mt-2">
                             {name}
                         </div>
-                        <button className="w-full border rounded-lg bg-foreground/50 hover:bg-foreground/60 p-2 mt-2 mb-1 text-background font-semibold transition duration-300">
+                        <button className="w-full border rounded-lg bg-teal-600 hover:bg-teal-700 p-2 mt-2 mb-1 text-background font-semibold transition duration-300">
                             Establish Connection
                         </button>
                     </div>
