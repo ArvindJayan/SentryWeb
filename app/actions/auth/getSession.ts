@@ -4,7 +4,11 @@ import { createClient } from "@/utils/supabase/server";
 
 export const getSession = async () => {
     const supabase = await createClient();
-    const { data: userData, error: userError } = await supabase.auth.getUser();
+    const { data: session, error: userError } = await supabase.auth.getUser();
 
-    return { user: userData.user, error: userError };
+    if (userError) throw userError;
+    if (!session) throw new Error("Session not found");
+
+    return { user: session.user, error: userError };
 }
+
