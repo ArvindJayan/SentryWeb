@@ -16,7 +16,7 @@ export default function Navbar() {
             <NavbarBreadcrumb />
 
             <div className='flex-grow' />
-            <div className='flex items-center justify-center max-w-[40vw]'>
+            <div className='flex items-center justify-end max-w-[40vw]'>
                 <GetStartedButton />
                 <NavUser />
             </div>

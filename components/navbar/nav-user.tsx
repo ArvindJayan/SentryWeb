@@ -46,7 +46,7 @@ export function NavUser() {
         (async () => {
             const session = await getSession();
             if (session) {
-                setProfilePicture(session.user.user_metadata.picture);
+                setProfilePicture(session.user?.user_metadata?.picture || null);
                 setIsSignedIn(true);
             } else {
                 setIsSignedIn(false);
