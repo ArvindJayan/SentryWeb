@@ -48,10 +48,10 @@ export function AnimatedBeamMultipleOutputDemo({
             )}
             ref={containerRef}
         >
-            <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
+            <div className="flex size-full max-w-lg text-teal-600 stroke-2 text-xl flex-row items-stretch justify-between gap-10">
                 <div className="flex flex-col justify-center text-foreground">
                     <Circle ref={div7Ref}>
-                        <User />
+                        <User className="text-teal-600 stroke-2 text-xl" />
                     </Circle>
                 </div>
                 <div className="flex flex-col justify-center">
