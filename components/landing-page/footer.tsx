@@ -12,7 +12,7 @@ const footerSections = [
         title: "Product",
         links: [
             {
-                title: "Feautures",
+                title: "Features",
                 href: "/",
             }
         ],
