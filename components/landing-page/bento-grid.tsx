@@ -32,7 +32,7 @@ const features = [
     {
         Icon: FileTextIcon,
         name: "Extensive library of tools",
-        description: "Every tools for your network security and testing needs",
+        description: "Every tool for your network security and testing needs",
         href: "#",
         cta: "Learn more",
         className: "col-span-3 lg:col-span-1",
