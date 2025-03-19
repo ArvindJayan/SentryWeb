@@ -1,18 +1,7 @@
 import { Monitor } from "@phosphor-icons/react/dist/ssr";
-import { redirect } from "next/navigation";
-import { getSession } from "../actions/auth/getSession";
 
-export default async function ConnectionsPage() {
+export default function ConnectionsPage() {
     const connections = ["Test Connection 1", "Test Connection 2", "Test Connection 3", "Test Connection 4"];
-    try {
-        const session = await getSession();
-        if (!session.user) {
-            return redirect('/');
-        }
-    } catch (error) {
-        console.error(error);
-        return redirect('/');
-    }
 
     return (
         <main className="px-3 py-6 w-full h-full">

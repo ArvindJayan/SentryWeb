@@ -32,7 +32,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   toRef,
   curvature = 0,
   reverse = false,
-  duration = 360,
+  duration = 12,
   delay = 0,
   pathColor = "gray",
   pathWidth = 2,
@@ -166,7 +166,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
           }}
           transition={{
             delay,
-            duration,
+            duration: duration,
             ease: [0.16, 1, 0.3, 1], // https://easings.net/#easeOutExpo
             repeat: Infinity,
             repeatDelay: 0,
