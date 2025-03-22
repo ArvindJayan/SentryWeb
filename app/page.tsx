@@ -1,8 +1,16 @@
 import { BentoDemo } from "@/components/landing-page/bento-grid";
 import { FooterDemo } from "@/components/landing-page/footer";
 import { GlobeDemo } from "@/components/landing-page/globe";
+import { QueryClient } from "@tanstack/react-query";
+import { checkPermission } from "./actions/auth/checkPermission";
 
-export default function Home() {
+export default async function Home() {
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery({
+    queryKey: ['userInfo'],
+    queryFn: () => checkPermission()
+  })
+
   return (
     <main className="w-full h-full">
       <GlobeDemo />

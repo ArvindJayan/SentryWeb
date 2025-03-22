@@ -1,20 +1,12 @@
 "use client";
 
-import { checkPermission } from '@/app/actions/auth/checkPermission';
-import { BookOpen, TerminalWindow, User } from '@phosphor-icons/react';
-import { useQuery } from '@tanstack/react-query';
+import { BookOpen, TerminalWindow } from '@phosphor-icons/react';
 import { LayoutDashboard, MonitorDot, Settings } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Sidebar() {
     const pathname = usePathname();
-    const { data: data, isLoading } = useQuery({
-        queryKey: ['userInfo'],
-        queryFn: () => checkPermission()
-    });
-
-    const role = data?.userInfo?.[0]?.role;
 
     if (pathname === '/login' || pathname === '/' || pathname === '/request-access') {
         return null;
@@ -30,9 +22,6 @@ export default function Sidebar() {
                 <li>
                     <Link href="/dashboard" className={getLinkClass('/dashboard')}><LayoutDashboard className='h-5 w-5 mr-2 mt-1' />  Dashboard</Link>
                 </li>
-                {role === 'admin' && <li>
-                    <Link href="/admin" className={getLinkClass('/admin')}><User className='h-5 w-5 mr-2 mt-1' /> Admin</Link>
-                </li>}
                 <li>
                     <Link href="/guide" className={getLinkClass('/guide')}><BookOpen className='h-5 w-5 mr-2 mt-1' /> Guide</Link>
                 </li>
