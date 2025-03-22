@@ -19,7 +19,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
-          email: string
+          email?: string
           id?: string
           role?: string
           status?: string

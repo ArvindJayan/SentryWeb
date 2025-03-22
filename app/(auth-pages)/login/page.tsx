@@ -1,6 +1,6 @@
 import { LoginForm } from "@/components/login/login-form";
 
-export default function LoginPage() {
+export default async function LoginPage() {
   return (
     <main className='flex w-screen h-screen flex-row'>
       <div className='flex-1'>
