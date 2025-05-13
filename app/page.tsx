@@ -1,6 +1,7 @@
 import { BentoDemo } from "@/components/landing-page/bento-grid";
 import { FooterDemo } from "@/components/landing-page/footer";
 import { GlobeDemo } from "@/components/landing-page/globe";
+import { TextAnimate } from "@/components/ui/text-animate";
 import { QueryClient } from "@tanstack/react-query";
 import { checkPermission } from "./actions/auth/checkPermission";
 
@@ -16,7 +17,12 @@ export default async function Home() {
       <GlobeDemo />
 
       <div className="flex flex-col justify-center w-full">
-        <h1 className="text-center text-6xl font-extrabold mt-16 text-teal-600">What is SentryWeb?</h1>
+        <TextAnimate
+          className="text-center text-6xl font-extrabold mt-16 text-teal-600"
+          animation="blurInUp"
+          by="character">
+          What is SentryWeb?
+        </TextAnimate>
         <div className="flex justify-center text-lg my-2 text-center text-foreground/60 font-medium">
           SentryWeb is more than just your average network access tool. It's a
           platform that enables you <br />  with powerful tools to stay ahead of threats and keep your network safe.
