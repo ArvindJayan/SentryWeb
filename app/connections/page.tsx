@@ -1,4 +1,3 @@
-import CheckStatus from "@/components/permission/checkStatus";
 import { Monitor } from "@phosphor-icons/react/dist/ssr";
 
 export default function ConnectionsPage() {
@@ -7,7 +6,6 @@ export default function ConnectionsPage() {
     return (
         <main className="px-3 py-6 w-full h-full">
             <h1 className="text-2xl font-semibold mb-4">Connections</h1>
-            <CheckStatus />
             <div className="flex flex-wrap gap-8 justify-center">
                 {connections.map((name, index) => (
                     <div key={index} className="flex flex-col items-center w-1/3 h-max px-4 py-3 border-2 bg-foreground/5 rounded-lg">
