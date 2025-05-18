@@ -40,7 +40,7 @@ export default function UserProfile() {
                     <div className="h-full w-full mt-10 ml-8 p-10">
                         <div className="flex items-center justify-between mb-1.5">
                             <h1 className="text-2xl font-bold">{username}</h1>
-                            <Button className="px-4 py-2 bg-teal-600 text-background rounded-lg text-base hover:bg-teal-700 transition">
+                            <Button className="px-4 py-2 mr-2 bg-teal-600 text-background rounded-lg text-base hover:bg-teal-700 transition">
                                 Edit Profile
                             </Button>
                         </div>

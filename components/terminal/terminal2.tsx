@@ -121,7 +121,7 @@ export const Terminal2: React.FC = () => {
     return (
         <div className="w-full h-full mx-auto">
             <div className="bg-background rounded-lg p-6">
-                <div className="flex justify-between items-center mb-5 p-3 bg-foreground/10 rounded-lg">
+                <div className="flex justify-between items-center mb-5 p-3 bg-foreground/5 rounded-lg">
                     <div className="flex items-center">
                         <span
                             className={`inline-block w-3 h-3 rounded-full mr-2 ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}
