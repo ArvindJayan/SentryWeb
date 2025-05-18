@@ -1,14 +1,14 @@
 "use client";
 
 import { BookOpen, TerminalWindow } from '@phosphor-icons/react';
-import { LayoutDashboard, MonitorDot, Settings } from 'lucide-react';
+import { MonitorDot, Settings, User2 } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Sidebar() {
     const pathname = usePathname();
 
-    if (pathname === '/login' || pathname === '/' || pathname === '/request-access') {
+    if (pathname === '/login' || pathname === '/') {
         return null;
     }
 
@@ -20,7 +20,7 @@ export default function Sidebar() {
         <main className="w-[20vw] py-6 pl-7 pr-2 h-full text-base font-semibold text-foreground/60">
             <ul className='space-y-3 border border-foreground/10 p-4 rounded-lg w-full h-full'>
                 <li>
-                    <Link href="/dashboard" className={getLinkClass('/dashboard')}><LayoutDashboard className='h-5 w-5 mr-2 mt-1' />  Dashboard</Link>
+                    <Link href="/terminal" className={getLinkClass('/terminal')}><TerminalWindow className='h-5 w-5 mr-2 mt-1' /> Terminal</Link>
                 </li>
                 <li>
                     <Link href="/guide" className={getLinkClass('/guide')}><BookOpen className='h-5 w-5 mr-2 mt-1' /> Guide</Link>
@@ -28,8 +28,9 @@ export default function Sidebar() {
                 <li>
                     <Link href="/connections" className={getLinkClass('/connections')}><MonitorDot className='h-5 w-5 mr-2 mt-1' /> Connections</Link>
                 </li>
+
                 <li>
-                    <Link href="/terminal" className={getLinkClass('/terminal')}><TerminalWindow className='h-5 w-5 mr-2 mt-1' /> Terminal</Link>
+                    <Link href="/profile" className={getLinkClass('/profile')}><User2 className='h-5 w-5 mr-2 mt-1' /> Profile</Link>
                 </li>
                 <li>
                     <Link href="/settings" className={getLinkClass('/settings')}><Settings className='h-5 w-5 mr-2 mt-1' /> Settings</Link>

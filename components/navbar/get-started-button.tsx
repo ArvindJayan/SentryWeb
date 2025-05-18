@@ -1,7 +1,7 @@
 "use client";
 
 import { getSession } from "@/app/actions/auth/getSession";
-import { usePathname, useRouter } from "next/navigation"; // Added usePathname
+import { usePathname, useRouter } from "next/navigation";
 
 export default function GetStartedButton() {
     const router = useRouter();

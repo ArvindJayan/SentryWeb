@@ -23,5 +23,5 @@ export async function handleGoogleLogin() {
     }
 
     revalidatePath('/', 'layout');
-    redirect('/dashboard');
+    redirect('/terminal');
 }
