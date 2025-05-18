@@ -16,7 +16,7 @@ export default function GetStartedButton() {
             if (!user) {
                 return router.push('/login');
             }
-            router.push('/dashboard');
+            router.push('/terminal');
         } catch (error) {
             console.error(error);
             router.push('/login');

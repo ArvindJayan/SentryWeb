@@ -120,7 +120,7 @@ export const Terminal2: React.FC = () => {
 
     return (
         <div className="w-full h-full mx-auto">
-            <div className="bg-background rounded-lg p-6 shadow-md">
+            <div className="bg-background rounded-lg p-6">
                 <div className="flex justify-between items-center mb-5 p-3 bg-foreground/10 rounded-lg">
                     <div className="flex items-center">
                         <span
