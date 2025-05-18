@@ -16,22 +16,22 @@ export default function Guide() {
                     <p className="mt-2">
                         <strong className="text-base">Example Commands:</strong>
                     </p>
-                    <p className="mt-2 ml-4">
+                    <div className="mt-2 ml-4">
                         Perform a stealth scan on all ports of a target.
                         <ScriptCopyButton command="nmap -sS -p 1-65535 192.168.1.1" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Enable OS detection, version detection, script scanning, and traceroute.
                         <ScriptCopyButton command="nmap -A 192.168.1.1" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Skip host discovery and scan the target directly.
                         <ScriptCopyButton command="nmap -Pn 192.168.1.1" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Detect service versions on specific ports.
                         <ScriptCopyButton command="nmap -sV -p 80,443 192.168.1.1" />
-                    </p>
+                    </div>
                 </div>
             </section >
             <section id="metasploit" className="mt-8">
@@ -47,22 +47,22 @@ export default function Guide() {
                     <p className="mt-2">
                         <strong className="text-base">Example Commands:</strong>
                     </p>
-                    <p className="mt-2 ml-4">
+                    <div className="mt-2 ml-4">
                         Launch the Metasploit console.
                         <ScriptCopyButton command="msfconsole" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Load the EternalBlue exploit module.
                         <ScriptCopyButton command="use exploit/windows/smb/ms17_010_eternalblue" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Search for SMB-related exploits in Metasploit.
                         <ScriptCopyButton command="search exploit/windows/smb" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Set the target host for an exploit.
                         <ScriptCopyButton command="set RHOSTS 192.168.1.1" />
-                    </p>
+                    </div>
                 </div>
             </section>
             <section id="wireshark" className="mt-8">
@@ -77,22 +77,22 @@ export default function Guide() {
                     <p className="mt-2">
                         <strong className="text-base">Example Commands:</strong>
                     </p>
-                    <p className="mt-2 ml-4">
+                    <div className="mt-2 ml-4">
                         Launch the Wireshark GUI.
                         <ScriptCopyButton command="wireshark" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Use the command-line version of Wireshark to capture packets on the eth0 interface.
                         <ScriptCopyButton command="tshark -i eth0" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Analyze a previously captured packet file.
                         <ScriptCopyButton command="tshark -r capture.pcap" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Start Wireshark and immediately begin capturing on eth0.
                         <ScriptCopyButton command="wireshark -k -i eth0" />
-                    </p>
+                    </div>
                 </div>
             </section>
             <section id="hashcat" className="mt-8">
@@ -107,22 +107,22 @@ export default function Guide() {
                     <p className="mt-2">
                         <strong className="text-base">Example Commands:</strong>
                     </p>
-                    <p className="mt-2 ml-4">
+                    <div className="mt-2 ml-4">
                         Perform a dictionary attack on MD5 hashes.
                         <ScriptCopyButton command="hashcat -m 0 -a 0 hash.txt wordlist.txt" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Perform a brute-force attack on NTLM hashes.
                         <ScriptCopyButton command="hashcat -m 1000 -a 3 hash.txt ?a?a?a?a" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Crack WPA/WPA2 handshakes.
                         <ScriptCopyButton command="hashcat -m 2500 -a 0 handshake.hccapx wordlist.txt" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Perform a brute-force attack on MD5 hashes using digits.
                         <ScriptCopyButton command="hashcat -m 500 -a 3 hash.txt ?d?d?d?d" />
-                    </p>
+                    </div>
                 </div>
             </section>
             <section id="burpsuite" className="mt-8">
@@ -137,23 +137,22 @@ export default function Guide() {
                     <p className="mt-2">
                         <strong className="text-base">Example Commands:</strong>
                     </p>
-                    <p className="mt-2 ml-4">
+                    <div className="mt-2 ml-4">
                         Open Burpsuite if installed via a package manager.
                         <ScriptCopyButton command="burpsuite" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Run Burpsuite in headless mode for automation.
                         <ScriptCopyButton command="burpsuite --headless" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Launch Burpsuite from the command line.
                         <ScriptCopyButton command="java -jar burpsuite.jar" />
-                    </p>
-                    <p className="mt-2 ml-4">
+                    </div>
+                    <div className="mt-2 ml-4">
                         Launch Burpsuite with 2GB of allocated memory.
                         <ScriptCopyButton command="java -Xmx2G -jar burpsuite.jar" />
-                    </p>
-
+                    </div>
                 </div>
             </section>
         </div >

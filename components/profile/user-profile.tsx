@@ -1,16 +1,14 @@
 "use client";
 
 import { getSession } from "@/app/actions/auth/getSession";
-import { redirect } from "next/navigation";
 import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 export default function UserProfile() {
     const [username, setUSername] = useState<string | undefined>();
     const [email, setEmail] = useState<string | null>(null);
     const [profilePicture, setProfilePicture] = useState<string | null>(null);
-    const handleButtonClick = () => {
-        redirect("/terminal");
-    };
+    const [createdAt, setCreatedAt] = useState<string | null>(null);
 
     useEffect(() => {
         (async () => {
@@ -19,6 +17,7 @@ export default function UserProfile() {
                 setProfilePicture(user.user_metadata?.picture || "");
                 setUSername(user.user_metadata?.name || null);
                 setEmail(user.user_metadata?.email || null);
+                setCreatedAt(user.created_at || null);
             }
         })();
     }, []);
@@ -27,7 +26,7 @@ export default function UserProfile() {
         <main className="w-full h-full">
             <div className="border rounded-xl mt-2 w-5/6">
                 <div className="flex flex-1 relative">
-                    <div className="h-[30vh] w-full bg-teal-500 rounded-t-xl relative">
+                    <div className="h-[30vh] w-full bg-teal-600 rounded-t-xl relative">
                         {profilePicture && (
                             <img
                                 src={profilePicture}
@@ -39,8 +38,21 @@ export default function UserProfile() {
                 </div>
                 <div className="flex-1">
                     <div className="h-full w-full mt-10 ml-8 p-10">
-                        <h1 className="text-2xl font-bold mb-1.5">{username}</h1>
+                        <div className="flex items-center justify-between mb-1.5">
+                            <h1 className="text-2xl font-bold">{username}</h1>
+                            <Button className="px-4 py-2 bg-teal-600 text-background rounded-lg text-base hover:bg-teal-700 transition">
+                                Edit Profile
+                            </Button>
+                        </div>
                         <p className="text-foreground/70">{email}</p>
+                        <p className="mt-1 text-sm text-foreground/50">
+                            Member since:{" "}
+                            <span className="font-medium">
+                                {createdAt
+                                    ? new Date(createdAt).toLocaleDateString()
+                                    : "-"}
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>

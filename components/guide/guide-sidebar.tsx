@@ -9,8 +9,8 @@ export default function GuideSidebar() {
 
     return (
         <div className="w-max p-4 pr-20 border rounded-lg h-[80vh]">
-            <h1 className=" text-base font-semibold mb-3">On This Page</h1>
-            <ul className="space-y-2 text-sm ml-4 text-foreground/80">
+            <h1 className="text-base font-semibold mb-3">On This Page</h1>
+            <ul className="space-y-2 text-base ml-4 text-foreground/80">
                 {sections.map((section, index) => (
                     <li key={section.id}>
                         <a

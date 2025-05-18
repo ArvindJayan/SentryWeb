@@ -20,13 +20,13 @@ export function ThemeSwitcher() {
     if (!mounted) return null;
 
     return (
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center justify-between gap-4 pr-8 pt-5">
+            <Label htmlFor="theme-switch" className="text-base ml-8 mr-72">Toggle Theme</Label>
             <Switch
                 id="theme-switch"
                 onCheckedChange={toggleTheme}
                 defaultChecked={theme === "dark"}
             />
-            <Label htmlFor="theme-switch">Toggle Theme</Label>
         </div>
     )
 }

@@ -28,7 +28,6 @@ export default function Sidebar() {
                 <li>
                     <Link href="/connections" className={getLinkClass('/connections')}><MonitorDot className='h-5 w-5 mr-2 mt-1' /> Connections</Link>
                 </li>
-
                 <li>
                     <Link href="/profile" className={getLinkClass('/profile')}><User2 className='h-5 w-5 mr-2 mt-1' /> Profile</Link>
                 </li>
