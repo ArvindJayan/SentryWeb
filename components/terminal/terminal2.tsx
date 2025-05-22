@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Input } from '../ui/input';
 import { env } from 'process';
 
-const initAPI = env.SENTRY_SERVER_API || 'http://localhost:8080';
+const initAPI = env.SENTRY_SERVER_API || 'http://34.9.32.88:8080';
 
 export const Terminal2: React.FC = () => {
     const [API_URL, setAPI_URL] = useState<string>(initAPI);
