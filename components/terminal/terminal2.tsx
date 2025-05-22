@@ -2,10 +2,12 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Input } from '../ui/input';
+import { env } from 'process';
 
-const API_URL = 'http://localhost:8080';
+const initAPI = env.SENTRY_SERVER_API || 'http://localhost:8080';
 
 export const Terminal2: React.FC = () => {
+    const [API_URL, setAPI_URL] = useState<string>(initAPI);
     const [isConnected, setIsConnected] = useState<boolean>(false);
     const [statusText, setStatusText] = useState<string>('Disconnected');
     const [terminalContent, setTerminalContent] = useState<string>('');
@@ -68,7 +70,7 @@ export const Terminal2: React.FC = () => {
             const data = await response.json();
             if (response.ok && data.outputs && data.outputs.length > 0) {
                 data.outputs.forEach((output: string) => {
-                    appendToTerminal(output);
+                    appendToTerminal(output + '\n');
                 });
             }
         } catch (error) {
@@ -88,7 +90,7 @@ export const Terminal2: React.FC = () => {
 
     // Append text to the terminal and scroll to bottom
     const appendToTerminal = (text: string) => {
-        setTerminalContent((prev) => prev + text);
+        setTerminalContent((prev) => prev + text + '\n');
         setTimeout(() => {
             if (terminalRef.current) {
                 terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
@@ -128,6 +130,14 @@ export const Terminal2: React.FC = () => {
                             id="status-light"
                         ></span>
                         <span id="status-text" className="font-medium">{statusText}</span>
+                        <input
+                            type="text"
+                            id="api-url"
+                            placeholder="API URL"
+                            className="ml-5 flex-grow p-2 rounded-lg mr-2 bg-foreground/5 text-foreground/70 font-mono focus:outline-none focus:ring-2 focus:ring-teal-500"
+                            value={API_URL}
+                            onChange={(e) => setAPI_URL(e.target.value)}
+                        />
                     </div>
                     <div>
                         <button
@@ -145,7 +155,11 @@ export const Terminal2: React.FC = () => {
                     ref={terminalRef}
                     style={{ minHeight: '200px' }}
                 >
-                    {terminalContent}
+                    {terminalContent.split('\n').map((content, index) => (
+                        <div key={index} className="whitespace-pre-wrap">
+                            {content}
+                        </div>
+                    ))}
                 </div>
                 <div className="flex mb-4">
                     <Input
