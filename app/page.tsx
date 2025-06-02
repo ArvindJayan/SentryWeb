@@ -2,22 +2,12 @@ import { BentoDemo } from "@/components/landing-page/bento-grid";
 import { FooterDemo } from "@/components/landing-page/footer";
 import { GlobeDemo } from "@/components/landing-page/globe";
 import { TextAnimate } from "@/components/ui/text-animate";
-import Head from "next/head";
+import GoogleTag from "../components/google-tag/google-tag";
 
 export default async function Home() {
   return (
     <main className="w-full h-full">
-      <Head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6YMS5RNS1"></script>
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-M6YMS5RNS1');
-          `}
-        </script>
-      </Head>
+      <GoogleTag />
       <GlobeDemo />
 
       <div className="flex flex-col justify-center w-full">
