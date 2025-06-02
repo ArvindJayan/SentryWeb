@@ -1,6 +1,7 @@
 import ConnectionsList from "@/components/connections/connections-list";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
+import Head from "next/head";
 
 export default function ConnectionsPage() {
     return (
