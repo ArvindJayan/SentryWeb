@@ -13,6 +13,17 @@ import { Switch } from "@/components/ui/switch";
 export default function SettingsPage() {
     return (
         <main className="px-3 py-6 w-full h-full">
+            <Head>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-M6YMS5RNS1"></script>
+                <script>
+                  {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-M6YMS5RNS1');
+                  `}
+                </script>
+              </Head>
             <h1 className="text-2xl font-semibold mb-2">Settings</h1>
             <ThemeSwitcher />
             <div className=" grid gap-8 p-8">
