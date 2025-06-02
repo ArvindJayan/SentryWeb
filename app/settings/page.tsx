@@ -9,6 +9,7 @@ import {
     SelectValue
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
+import Head from "next/head";
 
 export default function SettingsPage() {
     return (
