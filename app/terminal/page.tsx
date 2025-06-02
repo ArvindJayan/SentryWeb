@@ -1,4 +1,5 @@
 import Terminal2 from "@/components/terminal/terminal2";
+import Head from "next/head";
 
 export default function TerminalPage() {
 
