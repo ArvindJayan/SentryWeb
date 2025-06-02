@@ -1,5 +1,6 @@
 import GuideSidebar from "@/components/guide/guide-sidebar";
 import Guides from "@/components/guide/guides";
+import Head from "next/head";
 
 export default function GuidePage() {
     return (
