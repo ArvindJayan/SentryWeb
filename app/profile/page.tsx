@@ -1,4 +1,5 @@
 import UserProfile from "../../components/profile/user-profile";
+import Head from "next/head";
 
 export default function Profile() {
     return (
