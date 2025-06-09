@@ -1,3 +1,4 @@
+import GoogleTag from "@/components/google-tag/google-tag";
 import { ThemeSwitcher } from "@/components/settings/theme-switcher";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,6 +14,7 @@ import { Switch } from "@/components/ui/switch";
 export default function SettingsPage() {
     return (
         <main className="px-3 py-6 w-full h-full">
+            <GoogleTag />
             <h1 className="text-2xl font-semibold mb-2">Settings</h1>
             <ThemeSwitcher />
             <div className=" grid gap-8 p-8">

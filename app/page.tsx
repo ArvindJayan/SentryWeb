@@ -2,10 +2,12 @@ import { BentoDemo } from "@/components/landing-page/bento-grid";
 import { FooterDemo } from "@/components/landing-page/footer";
 import { GlobeDemo } from "@/components/landing-page/globe";
 import { TextAnimate } from "@/components/ui/text-animate";
+import GoogleTag from "../components/google-tag/google-tag";
 
 export default async function Home() {
   return (
     <main className="w-full h-full">
+      <GoogleTag />
       <GlobeDemo />
 
       <div className="flex flex-col justify-center w-full">
